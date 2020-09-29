@@ -3,6 +3,8 @@ from reader import sintel, kitti
 import cv2
 import numpy as np
 
+from flow_lib import save_flow_image
+
 # PLEASE MODIFY the paths specified in sintel.py and kitti.py
 
 def predict(pipe, prefix, batch_size = 8, resize = None):
@@ -31,8 +33,8 @@ def predict(pipe, prefix, batch_size = 8, resize = None):
 				seq_output_folder = os.path.join(output_folder, seq)
 				if not os.path.exists(seq_output_folder):
 					os.mkdir(seq_output_folder)
-				flo.save(flow, os.path.join(seq_output_folder, fname.replace('.png', '.flo')))
-
+				#flo.save(flow, os.path.join(seq_output_folder, fname.replace('.png', '.flo')))
+				save_flow_image(os.path.join(seq_output_folder, fname.replace('.png', '.flo')), flow)
 
 	'''
 	KITTI 2012:
