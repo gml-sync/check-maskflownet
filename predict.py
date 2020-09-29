@@ -36,7 +36,7 @@ def predict(pipe, prefix, batch_size = 8, resize = None):
 					os.mkdir(seq_output_folder)
 				#flo.save(flow, os.path.join(seq_output_folder, fname.replace('.png', '.flo')))
 				save_flow_image(os.path.join(seq_output_folder, fname.replace('.png', '.jpg')), flow)
-				output = 1-(occ_mask - occ_mask.min()) / (occ_mask.max() - occ_mask.min())
+				output = (occ_mask - occ_mask.min()) / (occ_mask.max() - occ_mask.min())
 				save_occ_image(os.path.join(seq_output_folder, fname.rsplit('.')[0] + '_occ.jpg'), output )
 				if out < 10:
 					print(occ_mask.min(), occ_mask.max())
