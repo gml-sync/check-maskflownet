@@ -34,7 +34,7 @@ def predict(pipe, prefix, batch_size = 8, resize = None):
 				if not os.path.exists(seq_output_folder):
 					os.mkdir(seq_output_folder)
 				#flo.save(flow, os.path.join(seq_output_folder, fname.replace('.png', '.flo')))
-				save_flow_image(os.path.join(seq_output_folder, fname.replace('.png', '.flo')), flow)
+				save_flow_image(os.path.join(seq_output_folder, fname.replace('.png', '.jpg')), flow)
 
 	'''
 	KITTI 2012:
