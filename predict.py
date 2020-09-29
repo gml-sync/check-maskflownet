@@ -8,6 +8,7 @@ from flow_lib import save_flow_image
 # PLEASE MODIFY the paths specified in sintel.py and kitti.py
 
 def predict(pipe, prefix, batch_size = 8, resize = None):
+	out = 0
 
 	sintel_resize = (448, 1024) if resize is None else resize
 	sintel_dataset = sintel.list_data()
@@ -35,6 +36,10 @@ def predict(pipe, prefix, batch_size = 8, resize = None):
 					os.mkdir(seq_output_folder)
 				#flo.save(flow, os.path.join(seq_output_folder, fname.replace('.png', '.flo')))
 				save_flow_image(os.path.join(seq_output_folder, fname.replace('.png', '.jpg')), flow)
+				if out < 4:
+					print(type(occ_mask))
+					print(occ_mask.shape)
+					print(occ_mask[0, 0])
 
 	'''
 	KITTI 2012:
