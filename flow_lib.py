@@ -1,6 +1,9 @@
 import numpy as np
 import cv2
 
+TAG_CHAR = np.array([202021.25], np.float32)
+UNKNOWN_FLOW_THRESH = 1e7
+
 def compute_color(u, v):
     """
     compute optical flow color map
