@@ -36,11 +36,9 @@ def predict(pipe, prefix, batch_size = 8, resize = None):
 					os.mkdir(seq_output_folder)
 				#flo.save(flow, os.path.join(seq_output_folder, fname.replace('.png', '.flo')))
 				save_flow_image(os.path.join(seq_output_folder, fname.replace('.png', '.jpg')), flow)
-				if out < 4:
-					print(type(occ_mask))
-					print(occ_mask.shape)
-					print(occ_mask[0, 0])
-
+				if out < 100:
+					print(occ_mask.min(), occ_mask.max())
+					out += 1
 	'''
 	KITTI 2012:
 	Submission instructions: For the optical flow benchmark, all flow fields of the test set must be provided in the root directory of a zip file using the file format described in the readme.txt (16 bit color png) and the file name convention of the ground truth (000000_10.png, ... , 000194_10.png).

@@ -146,3 +146,6 @@ def flow_to_png_middlebury(flow, rad_clip=999):
 def save_flow_image(path, flow):
     flow_rgb = flow_to_png_middlebury(flow)
     cv2.imwrite(path, flow_rgb, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
+
+def save_occ_image(path, occ):
+    pass
