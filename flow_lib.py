@@ -148,4 +148,4 @@ def save_flow_image(path, flow):
     cv2.imwrite(path, flow_rgb, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 
 def save_occ_image(path, occ):
-    cv2.imwrite(path, flow_rgb, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
+    cv2.imwrite(path, occ, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
